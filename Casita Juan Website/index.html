@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casita Juan Beach</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+    <div class="logo">
+        <img src="casita.jpg" alt="Casita Juan Beach Resort Logo">
+    </div>
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="Reservation.html">Reservations</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <form action="loginpage.html" method="get">
+        <button type="submit" class="login-button">Log In</button>
+    </form>
+    <script> 
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+    
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    });</script>
+   
+    
+</header>
+
+
+    <section class="hero">
+        <div class="slider">
+            <img id="slide1" src="image.jpg" alt="Image 1" class="mySlides">
+            <img id="slide2" src="image1.jpg" alt="Image 2" class="mySlides" style="display: none;">
+            <img id="slide3" src="beach.jpg" alt="Image 3" class="mySlides" style="display: none;">
+            <div class="slider-nav">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+    
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+    
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+    
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+            
+        </script>
+        <div class="hero-text">
+            <h1>Escape to Paradise</h1>
+            <p>Experience the beauty of Casita Juan Beach.</p>
+            <form action="bookingpage.html" method="get">
+                <button type="submit" class="cta-button">Book Now</button>
+              </form>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <h2>Why Choose Casita Juan Beach?</h2>
+        <div class="benefit-slider">
+            <div class="benefit-item">
+                <i class="fas fa-beach"></i>
+                <h3>Private Beach</h3>
+                <p>Relax on our pristine, secluded beach.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-concierge-bell"></i>
+                <h3>Personalized Service</h3>
+                <p>Enjoy attentive service tailored to your needs.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-utensils"></i>
+                <h3>Delicious Cuisine</h3>
+                <p>Indulge in fresh, local flavors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="signup">
+        <h2>Ready to Escape?</h2>
+        <form action="submit.html" method="get">
+            <input type="email" name="email" placeholder="Enter your email...">
+            <button type="submit">Get Started</button>
+        </form>
+    </section>
+
+    <section class="social-media-section">
+        <div class="social-media">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Reservation.html">Reservations</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2023 Casita Juan Beach. All Rights Reserved.</p>
+    </footer>
+
+    
+</body>
+</html>
