@@ -1,0 +1,423 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.nav-links a:hover {
+    color: #f9f9f9;
+    background-color: #333;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    background-color: #000;
+    height: 3px;
+    width: 25px;
+    margin-bottom: 4px;
+}
+
+.login-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login-button:hover {
+    background-color: #777a7e;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #eae2e2;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .login-button {
+        padding: 8px 15px;
+    }
+    
+       
+}
+
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: url('background-pattern.png');
+}
+
+.slider {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    height: auto;
+    border-radius: 30px;
+
+}
+
+#Resort Image{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    transition: all 0.5 ease-in-out;
+    opacity: 1;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-nav a { 
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.slider {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.mySlides {
+    width: 100%;
+    height: auto;
+}
+
+.dots {
+    text-align: center;
+    position: absolute;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+cursor: pointer;
+height: 10px;
+width: 10px;
+margin: 0 5px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.3s ease;
+}
+
+.active {
+background-color: #ffffff;
+}
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -22px;
+color: rgb(0, 0, 0);
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.prev {
+left: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hero-text {
+    width: 45%;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-family: 'Georgia', serif;
+    font-size: 48px;
+    color: #000;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-text {
+        width: 80%;
+    }
+
+    .hero-text h1 {
+        font-size: 36px; /* Adjust heading size for smaller screens */
+    }
+
+    .hero-text p {
+        font-size: 16px; /* Smaller paragraph text for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        width: 90%;
+    }
+
+    .hero-text h1 {
+        font-size: 28px; /* Further reduced heading size */
+    }
+
+    .hero-text p {
+        font-size: 14px; /* Smaller paragraph text for better readability */
+    }
+}
+
+
+.cta-button {
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.cta-button:hover {
+    background-color: #777a7e; 
+}
+.benefits {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.benefit-slider {
+    display: flex;
+    overflow-x: auto;
+}
+
+.benefit-item {
+    min-width: 300px; 
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.testimonials {
+    position: relative;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+}
+
+.testimonial-item {
+    min-width: 300px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+
+.features {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.feature-slider {
+    display: flex;
+    overflow-x: auto;
+}
+
+.feature-item {
+    min-width: 300px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+
+.signup {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.signup input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.signup button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-menu li {
+    margin-right: 20px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+}
+.footer-menu a:hover{
+    background-color: #fff;
+    color: black;
+}
+.social-media a {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.benefit-button,
+.feature-button {
+    background-color: #f0f0f0; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; 
+    color: #333; 
+    width: fit-content; 
+}
+
+
+.social-media-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-media {
+    display: inline-block;
+}
+
+.social-media a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;
+}
