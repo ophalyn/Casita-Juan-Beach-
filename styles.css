@@ -2,8 +2,10 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, rgba(225, 228, 230, 0.6), rgba(125, 128, 133, 0.6)), url('beach-background.jpg');
     background-color: #f8f8f8;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
@@ -15,6 +17,13 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 100;
+}
+
+.header-content { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .logo img {
@@ -69,10 +78,12 @@ header {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .login-button:hover {
     background-color: #777a7e;
+    transform: scale(1.2);
 }
 
 /* Responsive Styles */
@@ -98,11 +109,13 @@ header {
     .login-button {
         padding: 8px 15px;
     }
-    
-       
+
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; 
+    }
 }
-
-
 
 .hero {
     display: flex;
@@ -238,11 +251,11 @@ background-color: rgba(0, 0, 0, 0.8);
     }
 
     .hero-text h1 {
-        font-size: 36px; /* Adjust heading size for smaller screens */
+        font-size: 36px; 
     }
 
     .hero-text p {
-        font-size: 16px; /* Smaller paragraph text for mobile */
+        font-size: 16px; 
     }
 }
 
@@ -252,11 +265,11 @@ background-color: rgba(0, 0, 0, 0.8);
     }
 
     .hero-text h1 {
-        font-size: 28px; /* Further reduced heading size */
+        font-size: 28px; 
     }
 
     .hero-text p {
-        font-size: 14px; /* Smaller paragraph text for better readability */
+        font-size: 14px; 
     }
 }
 
@@ -270,9 +283,11 @@ background-color: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
     display: inline-block;
     margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .cta-button:hover {
-    background-color: #777a7e; 
+    background-color: #777a7e;
+    transform: scale(1.2); 
 }
 .benefits {
     padding: 50px;
@@ -351,62 +366,22 @@ background-color: rgba(0, 0, 0, 0.8);
 }
 
 .signup button {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
-/* Footer */
-footer {
-    background-color: black;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.footer-menu li {
-    margin-right: 20px;
-}
-
-.footer-menu a {
-    text-decoration: none;
-    color: #fff;
-    padding: 5px;
-}
-.footer-menu a:hover{
-    background-color: #fff;
-    color: black;
+.signup button:hover {
+    background-color: #777a7e;
+    transform: scale(1.1);
 }
 .social-media a {
     margin-right: 10px;
     color: #fff;
 }
-
-.benefit-button,
-.feature-button {
-    background-color: #f0f0f0; 
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; 
-    color: #333; 
-    width: fit-content; 
-}
-
-
 .social-media-section {
     text-align: center;
     padding: 20px 0;
@@ -420,4 +395,38 @@ footer {
     font-size: 24px;
     margin: 0 10px;
     color: #333;
+}
+/* Footer */
+footer {
+    font-display: bold;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.footer-menu li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-menu a:hover {
+    text-decoration: underline;
+}
+footer p {
+    font-weight: bold;
 }
