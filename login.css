@@ -1,0 +1,159 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 70px;
+    margin-top: 20px;
+}
+
+/* Login Section */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('beach-background.jpg') no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1e1e1e;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #ff7a00;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-btn {
+    background-color: #000;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #777a7e;
+    transform: scale(1.2);
+}
+.forgot-password {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.forgot-password:hover {
+    color: #777a7e;
+}
+
+.signup-link {
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    color: #777a7e;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px 30px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .login-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

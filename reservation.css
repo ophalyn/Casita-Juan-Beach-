@@ -1,0 +1,210 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, rgba(225, 228, 230, 0.6), rgba(125, 128, 133, 0.6)), url('beach-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.nav-links a:hover {
+    color: #f9f9f9;
+    background-color: #333;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    background-color: #000;
+    height: 3px;
+    width: 25px;
+    margin-bottom: 4px;
+}
+
+.login-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login-button:hover {
+    background-color: #777a7e;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #eae2e2;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .login-button {
+        padding: 8px 15px;
+    }
+
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* Reservation Section */
+.reservation-section {
+    padding: 50px 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.reservation-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.actions {
+    text-align: center;
+}
+
+.reserve-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reserve-btn:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer-menu li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer-menu a:hover {
+    color: #ccc;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.social-media a:hover {
+    color: #ccc;
+}
