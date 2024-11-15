@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header Styles */
+
 header {
     background-color: #f8f8f8;
     display: flex;
@@ -88,7 +88,7 @@ header {
     background-color: #777a7e;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -119,7 +119,7 @@ header {
     }
 }
 
-/* About Section */
+
 #about {
     padding: 50px 0;
 }
@@ -128,7 +128,7 @@ header {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for readability */
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
@@ -152,46 +152,64 @@ header {
     margin-top: 20px;
 }
 
-/* Footer Styles */
 footer {
-    background-color: #000;
+    background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.footer-menu {
+.footer-menu ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
     padding: 0;
+    margin: 0;
+    display: inline-block;
 }
 
 .footer-menu li {
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 10px;
 }
 
 .footer-menu a {
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
     font-weight: bold;
+    padding: 10px 20px;
+    font-size: 18px; /* Larger size for larger screens */
+    transition: font-size 0.3s ease, padding 0.3s ease;
 }
 
 .footer-menu a:hover {
-    color: #ccc;
+    text-decoration: underline;
 }
 
-.social-media a {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 24px;
+footer p {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
 }
 
-.social-media a:hover {
-    color: #ccc;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .footer-menu {
+        display: block;
+    }
+
+    .footer-menu ul {
+        text-align: center;  /* Center the links on smaller screens */
+        padding: 0;
+    }
+
+    .footer-menu li {
+        display: block;  /* Stack the links vertically */
+        margin: 5px 0;
+    }
+
+    .footer-menu a {
+        font-size: 14px; /* Smaller font size on smaller screens */
+        padding: 5px 10px; /* Smaller padding */
+    }
 }
 
-.social-media-section {
-    margin-bottom: 15px;
-}

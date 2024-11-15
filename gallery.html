@@ -9,89 +9,97 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-content"> 
-            <div class="logo">
-                <img src="casita.png" alt="Casita Juan Beach Resort Logo">
-            </div>
-            <nav class="nav-bar">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="reservation.html">Reservations</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-            <form action="loginpage.html" method="get">
-                <button type="submit" class="login-button">Log In</button>
-            </form>
-        </div> 
-        <script> 
-            document.addEventListener('DOMContentLoaded', () => {
-                const menuIcon = document.querySelector('.menu-icon');
-                const navLinks = document.querySelector('.nav-links');
-            
-                menuIcon.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            });
-            </script>
-    </header>
-
-
-    <section class="gallery-section">
-        <h1>Discover the Charm of Casita Juan Beach Resor</h1>
-        <p>Discover the hidden paradise of Casita Juan Beach Resort – where every corner unveils a breathtaking view.</p>
-
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="beach-view.jpg" alt="Beach View" class="gallery-image">
-                <div class="overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="resort-pool.jpg" alt="Resort Pool" class="gallery-image">
-                <div class="overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="sunset.jpg" alt="Sunset" class="gallery-image">
-                <div class="overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="luxury-room.jpg" alt="Luxury Room" class="gallery-image">
-                <div class="overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="restaurant.jpg" alt="Restaurant" class="gallery-image">
-                <div class="overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="activities.jpg" alt="Activities" class="gallery-image">
-                <div class="overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
+<header>
+    <div class="header-content"> 
+        <div class="logo">
+            <img src="casita.png" alt="Casita Juan Beach Resort Logo">
         </div>
-    </section>
+        <nav class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <form action="loginpage.html" method="get">
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+    </div>
+</header>
 
-    <footer>
-        <p>&copy; 2024 Casita Juan Beach Resort. All Rights Reserved.</p>
-    </footer>
+<section class="gallery-section">
+    <h1>Discover the Charm of Casita Juan Beach Resort</h1>
+    <p>Discover the hidden paradise of Casita Juan Beach Resort – where every corner unveils a breathtaking view.</p>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="beach.jpg" alt="Beach View" class="gallery-image">
+        </div>
+        <div class="gallery-item">
+            <img src="beach.jpg" alt="Resort Pool" class="gallery-image">
+            
+        </div>
+        <div class="gallery-item">
+            <img src="beach.jpg" alt="Sunset" class="gallery-image">
+            
+        </div>
+        <div class="gallery-item">
+            <img src="beach.jpg" alt="Luxury Room" class="gallery-image">
+            <div class="overlay"></div>
+        </div>
+        <div class="gallery-item">
+            <img src="beach.jpg" alt="Restaurant" class="gallery-image">
+            
+        </div>
+        <div class="gallery-item">
+            <img src="beach.jpg" alt="Activities" class="gallery-image">
+            
+        </div>
+        <div class="gallery-item">
+            <img src="beach.jpg" alt="Activities" class="gallery-image">
+            
+        </div>
+        <div class="gallery-item">
+            <img src="beach.jpg" alt="Activities" class="gallery-image">
+            
+        </div>
+         <div class="gallery-item">
+            <img src="beach.jpg" alt="Activities" class="gallery-image">
+            
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reservation.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <p>&copy; 2023 Casita Juan Beach. All Rights Reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    });
+</script>
 
 </body>
 </html>

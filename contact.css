@@ -114,7 +114,7 @@ header {
     }
 }
 
-/* General Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -123,7 +123,7 @@ body {
     color: #333;
 }
 
-/* Container */
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -133,7 +133,6 @@ body {
     align-items: center;
 }
 
-/* Contact Section */
 .contact-section {
     position: relative;
     background-image: url('contact.jpg'); 
@@ -147,7 +146,7 @@ body {
     align-items: center;  
 }
 
-/* Section Heading */
+
 .contact-section h2 {
     font-family: 'Georgia', serif;
     font-weight: 700;
@@ -155,12 +154,12 @@ body {
     margin-bottom: 30px;
     font-size: 36px;
     text-transform: uppercase;
-    color: #000;
+    color: #ccc8c8;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     text-align: center;
 }
 
-/* Flexbox Layout for Contact Info and Form */
+
 .contact-container {
     display: flex;
     justify-content: center;
@@ -220,7 +219,7 @@ body {
     color: #333;
 }
 
-/* Contact Form Styling */
+
 .contact-form {
     background-color: rgba(255, 255, 255, 0.685);
     padding: 30px;
@@ -308,7 +307,6 @@ body {
 
 
 footer {
-    font-display: bold;
     background-color: #333;
     color: #fff;
     padding: 20px 0;
@@ -332,11 +330,40 @@ footer {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 20px;
+    font-size: 18px; 
+    transition: font-size 0.3s ease, padding 0.3s ease;
 }
 
 .footer-menu a:hover {
     text-decoration: underline;
 }
+
 footer p {
     font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
 }
+
+
+@media (max-width: 768px) {
+    .footer-menu {
+        display: block;
+    }
+
+    .footer-menu ul {
+        text-align: center;  
+        padding: 0;
+    }
+
+    .footer-menu li {
+        display: block; 
+        margin: 5px 0;
+    }
+
+    .footer-menu a {
+        font-size: 14px; 
+        padding: 5px 10px; 
+    }
+}
+

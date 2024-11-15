@@ -1,177 +1,213 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 header {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.logo-container {
+    background-color: #f8f8f8;
     display: flex;
-    justify-content: center;
-}
-
-.logo {
-    height: 70px;
-    margin-top: 20px;
-}
-
-/* Sign Up Section */
-.signup-section {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background: url('beach-background.jpg') no-repeat center center/cover;
-    height: 100%;
+    padding: 10px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
-.signup-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px 40px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 450px;
-    text-align: center;
+.logo img {
+    height: 50px;
 }
 
-h2 {
-    font-size: 2rem;
-    color: #1e1e1e;
-    margin-bottom: 15px;
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-p {
-    font-size: 1rem;
-    color: #666;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.nav-links a:hover {
+    color: #f9f9f9;
+    background-color: #333;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    background-color: #000;
+    height: 3px;
+    width: 25px;
+    margin-bottom: 4px;
+}
+
+.login-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login-button:hover {
+    background-color: #777a7e;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #eae2e2;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .login-button {
+        padding: 8px 15px;
+    }
+
+    .header-content { 
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between; 
+    }
+}
+
+
+.reservation-section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.reservation-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.reservation-container h2 {
+    font-size: 24px;
+    color: #494b4d;
+    margin-bottom: 10px;
+}
+
+.reservation-container p {
+    font-size: 16px;
     margin-bottom: 20px;
 }
 
 .input-group {
     margin-bottom: 20px;
-    text-align: left;
 }
 
-label {
-    font-size: 1rem;
-    color: #333;
+.input-group label {
+    font-size: 16px;
+    font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="password"] {
+.input-group input,
+.input-group textarea {
     width: 100%;
-    padding: 12px;
-    margin: 5px 0 15px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
-input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="password"]:focus, input[type="date"]:focus {
-    border-color: #ff7a00;
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #494b4d;
+    outline: none;
+}
+
+.textarea {
+    resize: vertical;
 }
 
 .actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
-.signup-btn {
-    background-color: #ff7a00;
+.reservation-btn {
+    background-color: #494b4d;
     color: white;
     padding: 12px 25px;
     border: none;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.signup-btn:hover {
-    background-color: #e15c00;
-}
-
-.login-link {
-    margin-top: 20px;
-}
-
-.login-link a {
-    color: #ff7a00;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.login-link a:hover {
-    color: #e15c00;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .signup-container {
-        padding: 20px 30px;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .signup-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="password"] {
-        font-size: 1rem;
-        padding: 10px;
-    }
-}
-/* Back Button Styling */
-.back-link {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.back-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff7a00;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.back-btn:hover {
-    background-color: #e15c00;
-}
-/* Footer Styles */
-footer {
+.reservation-btn:hover {
     background-color: #333;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #494b4d;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #222;
     color: #fff;
     padding: 40px 20px;
-    font-size: 14px;
     text-align: center;
 }
 
@@ -179,109 +215,43 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
-.footer-logo-img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
+.footer-logo img {
+    width: 100px;
 }
 
 .footer-links ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    gap: 30px;
 }
 
 .footer-links li {
     display: inline;
+    margin-right: 15px;
 }
 
 .footer-links a {
-    text-decoration: none;
     color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .footer-links a:hover {
-    color: #f9a825; /* Light Gold color on hover */
+    text-decoration: underline;
 }
 
-.footer-social {
-    display: flex;
-    gap: 20px;
-}
-
-.social-icon {
+.footer-social a {
     color: #fff;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-    color: #f9a825; /* Light Gold color on hover */
+    margin: 0 10px;
 }
 
 .footer-contact p {
-    margin: 5px 0;
-}
-
-.footer-contact a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-contact a:hover {
-    color: #f9a825;
+    font-size: 16px;
 }
 
 .footer-bottom {
+    font-size: 14px;
     margin-top: 20px;
-    font-size: 12px;
-    color: #aaa;
-}
-
-/* Responsive Styles for Footer */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .footer-links ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .footer-logo-img {
-        max-width: 120px;
-    }
-
-    .footer-social {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .footer-contact {
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-links ul {
-        gap: 10px;
-    }
-
-    .footer-logo-img {
-        max-width: 100px;
-    }
-
-    .footer-contact p {
-        font-size: 12px;
-    }
 }

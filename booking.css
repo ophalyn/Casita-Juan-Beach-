@@ -180,15 +180,17 @@ h2 {
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .room-card .book-button:hover {
-  background-color: #ffd700;  /* Accent color on hover */
+  background-color: #777a7e;
+    transform: scale(1.1);
 }
 
-/* Footer Styling */
+
 footer {
-  background-color: #333;  /* Dark footer */
+  background-color: #333; 
   color: #fff;
   text-align: center;
   padding: 20px 0;
@@ -201,7 +203,7 @@ footer p {
   font-size: 16px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -211,7 +213,7 @@ footer p {
     position: absolute;
     top: 60px;
     right: 0;
-    background-color: #f8f8f8;  /* Same as the header background */
+    background-color: #f8f8f8;  
     width: 200px;
     padding: 10px 0;
     display: none;
