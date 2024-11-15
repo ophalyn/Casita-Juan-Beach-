@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casita Juan Beach Resort - Booking</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-content"> 
+        <div class="logo">
+            <img src="casita.png" alt="Casita Juan Beach Resort Logo">
+        </div>
+        <nav class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <form action="loginpage.html" method="get">
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+    </div> <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuIcon = document.querySelector('.menu-icon');
+      const navLinks = document.querySelector('.nav-links');
+  
+      menuIcon.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  });
+</script>
+</header>
+
+  <main>
+    <section id="rooms">
+      <h2>Our Rooms</h2>
+      <div class="room-cards">
+
+        <!-- Couple's Room -->
+        <div class="room-card">
+          <img src="images/couples-room.jpg" alt="Couple's Room">
+          <h3>Couple's Room</h3>
+          <p><strong>PHP 2,700 per night</strong></p>
+          <ul>
+            <li>Air-conditioned room with queen-sized bed</li>
+            <li>Private toilet & bath</li>
+            <li>Towels, shampoo & body wash provided</li>
+            <li>Inclusive of breakfast</li>
+          </ul>
+          <button class="book-button" data-room-id="couples-room">Book Now</button>
+        </div>
+
+        <!-- Loft Room for 2 pax -->
+        <div class="room-card">
+          <img src="images/loft-room.jpg" alt="Loft Room for 2 Pax">
+          <h3>Loft Room (2 Pax)</h3>
+          <p><strong>PHP 3,200 per night</strong></p>
+          <ul>
+            <li>Air-conditioned loft-type room</li>
+            <li>Private toilet & bath</li>
+            <li>Towels, shampoo & body wash provided</li>
+            <li>Inclusive of breakfast</li>
+          </ul>
+          <button class="book-button" data-room-id="loft-2">Book Now</button>
+        </div>
+
+        <!-- Loft Room for 3 pax -->
+        <div class="room-card">
+          <img src="images/loft-room-3pax.jpg" alt="Loft Room for 3 Pax">
+          <h3>Loft Room (3 Pax)</h3>
+          <p><strong>PHP 3,750 per night</strong></p>
+          <ul>
+            <li>Air-conditioned loft-type room</li>
+            <li>Private toilet & bath</li>
+            <li>Towels, shampoo & body wash provided</li>
+            <li>Inclusive of breakfast</li>
+          </ul>
+          <button class="book-button" data-room-id="loft-3">Book Now</button>
+        </div>
+
+        <!-- Loft Room for 4 pax -->
+        <div class="room-card">
+          <img src="images/loft-room-4pax.jpg" alt="Loft Room for 4 Pax">
+          <h3>Loft Room (4 Pax)</h3>
+          <p><strong>PHP 4,500 per night</strong></p>
+          <ul>
+            <li>Air-conditioned loft-type room</li>
+            <li>Private toilet & bath</li>
+            <li>Towels, shampoo & body wash provided</li>
+            <li>Inclusive of breakfast</li>
+          </ul>
+          <button class="book-button" data-room-id="loft-4">Book Now</button>
+        </div>
+
+        <!-- Loft Room for 5 pax -->
+        <div class="room-card">
+          <img src="images/loft-room-5pax.jpg" alt="Loft Room for 5 Pax">
+          <h3>Loft Room (5 Pax)</h3>
+          <p><strong>PHP 5,250 per night</strong></p>
+          <ul>
+            <li>Air-conditioned loft-type room</li>
+            <li>Private toilet & bath</li>
+            <li>Towels, shampoo & body wash provided</li>
+            <li>Inclusive of breakfast</li>
+            <li>Extra mattresses & pillows available</li>
+          </ul>
+          <button class="book-button" data-room-id="loft-5">Book Now</button>
+        </div>
+
+        <!-- Exclusive Use of Resort -->
+        <div class="room-card">
+          <img src="images/exclusive-resort.jpg" alt="Exclusive Resort Use">
+          <h3>Exclusive Use of the Whole Resort</h3>
+          <p><strong>PHP 22,000 (17-20 Pax)</strong></p>
+          <p><strong>PHP 25,000 (22-28 Pax)</strong></p>
+          <ul>
+            <li>Exclusive access for 17 to 28 guests</li>
+            <li>No private dinners for outside guests</li>
+            <li>Quiet time must be followed</li>
+            <li>Breakfast for registered guests only</li>
+            <li>Sneak-in guests are charged PHP 1,500 per person</li>
+          </ul>
+          <button class="book-button" data-room-id="exclusive-resort">Book Now</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Casita Juan Beach Resort. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

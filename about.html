@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casita Juan Beach Resort</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Casita Juan Beach Resort</title>
+        <link rel="stylesheet" href="about.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+    
+        <!-- Header Section -->
+        <header>
+            <div class="header-content"> 
+                <div class="logo">
+                    <img src="casita.png" alt="Casita Juan Beach Resort Logo">
+                </div>
+                <nav class="nav-bar">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reservation.html">Reservations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+                <form action="loginpage.html" method="get">
+                    <button type="submit" class="login-button">Log In</button>
+                </form>
+            </div> 
+            <script>
+                const menuIcon = document.querySelector('.menu-icon');
+                const navLinks = document.querySelector('.nav-links');
+            
+                menuIcon.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            </script>
+            
+        </header>
+        <!-- End Header Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Welcome to Casita Juan Beach Resort</h2>
+            <p>Discover a tranquil escape where sun-kissed beaches, azure waters, and luxury blend seamlessly to create an unforgettable experience.</p>
+            <img src="juan.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+            <p>
+                Nestled along the golden sands and sparkling waters, Casita Juan Beach Resort is your perfect seaside escape. From breathtaking views to top-tier amenities, every moment spent here promises to be a treasure.
+            </p>
+            <p>
+                Our resort offers elegant and spacious rooms with scenic views, gourmet dining experiences featuring local and international flavors, and a wide range of activities to make your stay truly remarkable.
+            </p>
+            <p>
+                Whether you want to relax by the beach, indulge in spa treatments, or explore the vibrant local culture, Casita Juan Beach Resort is the ultimate destination for families, couples, and solo travelers.
+            </p>
+            <p>
+                Join us at Casita Juan Beach Resort, where the beauty of the ocean and the warmth of the community come together to create lasting memories.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+
+        <section class="social-media-section">
+            <div class="social-media">
+                <a href="https://www.facebook.com/casitajuan.baybay" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/casitajuan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+
+        <div class="footer-content">
+            
+            <ul class="footer-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2024 Casita Juan Beach Resort. All Rights Reserved.</p>
+        
+        </div>
+    </footer>
+
+</body>
+</html>
