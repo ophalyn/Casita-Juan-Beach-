@@ -10,45 +10,35 @@
 <body>
 
     <header>
-    <div class="logo">
-        <img src="casita.jpg" alt="Casita Juan Beach Resort Logo">
-    </div>
-    <nav class="nav-bar">
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="Gallery.html">Gallery</a></li>
-            <li><a href="Reservation.html">Reservations</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-        </ul>
-        <div class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-    <form action="loginpage.html" method="get">
-        <button type="submit" class="login-button">Log In</button>
-    </form>
-    <script> 
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuIcon = document.querySelector('.menu-icon');
-        const navLinks = document.querySelector('.nav-links');
-    
-        menuIcon.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    });</script>
-   
-    
-</header>
-
+        <div class="header-content"> 
+            <div class="logo">
+                <img src="casita.png" alt="Casita Juan Beach Resort Logo">
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reservation.html">Reservations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <form action="loginpage.html" method="get">
+                <button type="submit" class="login-button">Log In</button>
+            </form>
+        </div> 
+    </header>
 
     <section class="hero">
         <div class="slider">
-            <img id="slide1" src="image.jpg" alt="Image 1" class="mySlides">
-            <img id="slide2" src="image1.jpg" alt="Image 2" class="mySlides" style="display: none;">
-            <img id="slide3" src="beach.jpg" alt="Image 3" class="mySlides" style="display: none;">
+            <img id="slide1" src="image.jpg" alt="Casita Juan Beach Resort - view 1" class="mySlides">
+            <img id="slide2" src="image1.jpg" alt="Casita Juan Beach Resort - view 2" class="mySlides" style="display: none;">
+            <img id="slide3" src="beach.jpg" alt="Casita Juan Beach Resort - beach view" class="mySlides" style="display: none;">
             <div class="slider-nav">
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -59,42 +49,13 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </div>
-    
-        <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-    
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-    
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-    
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                if (n > slides.length) {slideIndex = 1}    
-                if (n < 1) {slideIndex = slides.length}
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex-1].style.display = "block";  
-                dots[slideIndex-1].className += " active";
-            }
-            
-        </script>
+
         <div class="hero-text">
             <h1>Escape to Paradise</h1>
             <p>Experience the beauty of Casita Juan Beach.</p>
-            <form action="bookingpage.html" method="get">
+            <form action="booking.html" method="get">
                 <button type="submit" class="cta-button">Book Now</button>
-              </form>
+            </form>
         </div>
     </section>
 
@@ -122,16 +83,15 @@
     <section class="signup">
         <h2>Ready to Escape?</h2>
         <form action="submit.html" method="get">
-            <input type="email" name="email" placeholder="Enter your email...">
+            <input type="email" name="email" placeholder="Enter your email..." required>
             <button type="submit">Get Started</button>
         </form>
     </section>
 
     <section class="social-media-section">
         <div class="social-media">
-            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/casitajuan.baybay" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/casitajuan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
         </div>
     </section>
 
@@ -139,15 +99,53 @@
         <div class="footer-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Gallery.html">Gallery</a></li>
-                <li><a href="Reservation.html">Reservations</a></li>
-                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
-        <p>&copy; 2023 Casita Juan Beach. All Rights Reserved.</p>
+        <p>&copy; 2024 Casita Juan Beach. All Rights Reserved.</p>
     </footer>
 
-    
+    <script> 
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav-links');
+        
+            menuIcon.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 </body>
 </html>
