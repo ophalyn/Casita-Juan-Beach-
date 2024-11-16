@@ -8,7 +8,7 @@ body {
   line-height: 1.6;
 }
 
-/* Header styles for consistency */
+
 header {
   background-color: #f8f8f8;
   display: flex;
@@ -87,7 +87,7 @@ header {
   transform: scale(1.2);
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
   .nav-links {
       display: none;
@@ -118,7 +118,7 @@ header {
   }
 }
 
-/* Room Cards Section */
+
 #rooms {
   padding: 80px 20px 40px;
   text-align: center;
@@ -126,7 +126,7 @@ header {
 
 h2 {
   font-size: 36px;
-  color: #000;  /* Dark text */
+  color: #000;  
   margin-bottom: 40px;
 }
 
@@ -137,7 +137,7 @@ h2 {
 }
 
 .room-card {
-  background-color: #fff;  /* Light background for cards */
+  background-color: #fff;  
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -153,7 +153,7 @@ h2 {
 
 .room-card h3 {
   font-size: 24px;
-  color: #000;  /* Dark text for titles */
+  color: #000; 
   margin-top: 15px;
 }
 
@@ -173,7 +173,7 @@ h2 {
 }
 
 .room-card .book-button {
-  background-color: #000;  /* Dark button */
+  background-color: #000;  
   color: #fff;
   border: none;
   padding: 10px 20px;
