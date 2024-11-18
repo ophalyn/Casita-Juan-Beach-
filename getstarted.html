@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Started | Casita Juan Beach Resort</title>
+    <title>Get Started - Casita Juan Beach</title>
     <link rel="stylesheet" href="getstarted.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
-        <div class="header-content">
+        <div class="header-content"> 
             <div class="logo">
                 <img src="casita.png" alt="Casita Juan Beach Resort Logo">
             </div>
@@ -22,71 +22,96 @@
                     <li><a href="reservation.html">Reservations</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
-        </div>
+            <form action="loginpage.html" method="get">
+                <button type="submit" class="login-button">Log In</button>
+            </form>
+        </div> 
     </header>
 
-    <!-- Get Started Section -->
+    <section class="hero">
+        <div class="slider">
+            <img id="slide1" src="gallery2.jpg" alt="Casita Juan Beach Resort - view 1" class="mySlides">
+            <img id="slide2" src="gallery6.jpg" alt="Casita Juan Beach Resort - view 2" class="mySlides" style="display: none;">
+            <img id="slide3" src="gallery7.jpg" alt="Casita Juan Beach Resort - beach view" class="mySlides" style="display: none;">
+            <div class="slider-nav">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+        <div class="hero-text">
+            <h1>Escape to Paradise</h1>
+            <p>Experience the beauty of Casita Juan Beach.</p>
+            <form action="booking.html" method="get">
+                <button type="submit" class="cta-button">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Start of Get Started Page Section -->
     <section class="get-started">
-        <div class="container">
-            <div class="get-started-text">
-                <h1>Get Started with Casita Juan Beach Resort</h1>
-                <p>Discover our exclusive services, explore activities, and book your stay at one of the most beautiful beach resorts. We are here to make your vacation unforgettable.</p>
-            </div>
-            
-            <div class="cta-buttons">
-                <button onclick="location.href='services.html'" class="cta-button">Explore Our Services</button>
-                <button onclick="location.href='booking.html'" class="cta-button">Make a Reservation</button>
-            </div>
-        </div>
-    </section>
+        <h2>Welcome to Casita Juan Beach – Your Perfect Beach Escape</h2>
+        <p>We're so excited to have you! Whether you're here to relax, explore, or just get away from it all, Casita Juan Beach is your ideal destination. This page is designed to help you get started and make the most of your stay with us.</p>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container">
-            <h2>Why Choose Us?</h2>
-            <div class="features">
-                <div class="feature-item">
-                    <img src="beach.jpg" alt="Private Beach">
-                    <h3>Private Beach</h3>
-                    <p>Relax and unwind on our exclusive, pristine beach with turquoise waters.</p>
-                </div>
-                <div class="feature-item">
-                    <img src="villa.jpg" alt="Luxury Villas">
-                    <h3>Luxury Villas</h3>
-                    <p>Stay in spacious, modern villas with breathtaking ocean views.</p>
-                </div>
-                <div class="feature-item">
-                    <img src="spa.jpg" alt="Spa & Wellness">
-                    <h3>Spa & Wellness</h3>
-                    <p>Indulge in world-class spa treatments and wellness programs to rejuvenate.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <h3>1. Book Your Stay</h3>
+        <p>The first step to your dream beach getaway is to book your stay at Casita Juan Beach. You can easily reserve your dates using our <a href="reservation.html">online booking tool</a>. Whether you're planning a romantic retreat or a family vacation, we have the perfect accommodations for you.</p>
+        <h4>Booking Tips:</h4>
+        <ul>
+            <li><strong>Flexible Dates:</strong> Check availability and choose dates that work best for you.</li>
+            <li><strong>Special Packages:</strong> Look for seasonal promotions and offers during your booking.</li>
+            <li><strong>Personalized Requests:</strong> Have special requests? Let us know, and we’ll do our best to accommodate you.</li>
+        </ul>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Guests Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-item">
-                    <p>"The best resort experience we’ve ever had! From the beach to the villas and staff, everything was perfect. Highly recommend!"</p>
-                    <p><strong>Maria & Juan</strong> - Mexico</p>
-                </div>
-                <div class="testimonial-item">
-                    <p>"A slice of paradise! We had an unforgettable time at Casita Juan Beach Resort. Definitely coming back soon."</p>
-                    <p><strong>Sarah & James</strong> - USA</p>
-                </div>
-                <div class="testimonial-item">
-                    <p>"Incredible hospitality and beautiful surroundings. A perfect getaway to relax and recharge!"</p>
-                    <p><strong>Linda & Greg</strong> - Canada</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <h3>2. Explore Our Casita & Amenities</h3>
+        <p>Your beach vacation experience begins with our cozy, charming Casita. Nestled right by the shore, our space offers everything you need for a restful stay:</p>
+        <ul>
+            <li><strong>Beachfront Views:</strong> Enjoy spectacular ocean views right from your room.</li>
+            <li><strong>Modern Amenities:</strong> Air conditioning, high-speed Wi-Fi, a fully equipped kitchen, and comfortable furnishings await.</li>
+            <li><strong>Private Outdoor Space:</strong> Lounge in our beautiful garden, or enjoy a sunset cocktail on the terrace.</li>
+        </ul>
+        <p>Need more information about the Casita's features? <a href="about.html">Click here to explore our accommodations</a>.</p>
 
-    <!-- Footer Section -->
+        <h3>3. Discover Activities & Experiences</h3>
+        <p>Whether you're an adventure seeker or just looking to unwind, there’s something for everyone at Casita Juan Beach.</p>
+        <ul>
+            <li><strong>Beach Days:</strong> Spend your days soaking up the sun, swimming, or enjoying water sports like kayaking and paddleboarding.</li>
+            <li><strong>Local Excursions:</strong> Explore nearby nature trails, local villages, and hidden gems along the coast.</li>
+            <li><strong>Wellness & Relaxation:</strong> Book a private massage or yoga session right on the beach.</li>
+            <li><strong>Culinary Delights:</strong> Indulge in local seafood, or let us arrange a private dinner at the Casita.</li>
+        </ul>
+        <p>For a full list of activities, <a href="gallery.html">visit our Experiences page</a>.</p>
+
+        <h3>4. Getting Here</h3>
+        <p>Casita Juan Beach is easily accessible and located in a stunning beachside community. Whether you're arriving by car, taxi, or public transport, we’re here to help with directions.</p>
+        <h4>By Car:</h4>
+        <p>If you’re driving, follow these directions: <strong>[Insert directions here]</strong>.</p>
+        <h4>By Taxi or Ride-Sharing:</h4>
+        <p>From the nearest airport or bus station, a taxi will take you directly to Casita Juan Beach in about <strong>[X] minutes</strong>.</p>
+        <h4>By Plane:</h4>
+        <p>The nearest airport is <strong>[Airport Name]</strong>, about <strong>[X] miles/km</strong> from us. Need help with transfers? We can arrange a pick-up for you!</p>
+
+        <h3>5. Plan Your Stay with Us</h3>
+        <p>We want you to have the best experience during your stay. Here are a few helpful tips to ensure your visit goes smoothly:</p>
+        <ul>
+            <li><strong>Arrival Time:</strong> Check-in is from <strong>[check-in time]</strong>. If you need to arrive earlier, let us know!</li>
+            <li><strong>Packing:</strong> Don’t forget sunscreen, comfortable shoes for exploring, and beachwear!</li>
+            <li><strong>Local Culture:</strong> Embrace the local culture by trying out regional dishes and learning about the traditions of the area. Need recommendations? Ask us!</li>
+        </ul>
+        <p>For any questions or special requests, feel free to <a href="contact.html">contact us</a>!</p>
+    </section>
+    <!-- End of Get Started Page Section -->
+
     <footer>
         <div class="footer-menu">
             <ul>
@@ -100,6 +125,44 @@
         <p>&copy; 2024 Casita Juan Beach. All Rights Reserved.</p>
     </footer>
 
-    <script src="scriptss.js"></script>
+    <script> 
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav-links');
+        
+            menuIcon.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 </body>
 </html>
