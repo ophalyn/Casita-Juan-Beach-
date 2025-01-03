@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Booking</title>
+    <link rel="stylesheet" href="afterbook.css">
+</head>
+<body>
+
+    <div class="thank-you-page">
+        <div class="thank-you-message">
+            <h1>Thank You for Securing Your Stay!</h1>
+            <p class="sub-message">Your booking has been successfully confirmed, and we can’t wait to welcome you to Casita Juan Beach Resort!</p>
+
+            <div class="booking-details">
+                <h3>Booking Confirmation:</h3>
+                <p><strong>Reservation ID:</strong> #12345ABC</p>
+                <p><strong>Check-in Date:</strong> <span id="check-in-date"></span></p>
+                <p><strong>Check-out Date:</strong> <span id="check-out-date"></span></p>
+                <p><strong>Total Price:</strong> PHP <span id="total-price"></span></p>
+                <p><strong>Room Type:</strong> <span id="room-name"></span></p>
+                <p><strong>Total Nights:</strong> <span id="total-nights"></span></p>
+            </div>
+
+            <p>We look forward to making your stay unforgettable. If you have any questions or special requests, feel free to reach out to us!</p>
+        </div>
+
+        <div class="cta-button">
+            <a href="index.html" class="home-button">Home</a>
+            <a href="booking.html" class="book-another">Book Another Room</a>
+            <a href="contact.html" class="contact-us">Contact Us</a>
+        </div>
+        
+    </div>
+
+    <script>
+        window.onload = function() {
+            
+            const roomName = localStorage.getItem("roomName");
+            const checkInDate = localStorage.getItem("checkIn");
+            const checkOutDate = localStorage.getItem("checkOut");
+            const totalNights = localStorage.getItem("totalNights");
+            const totalCost = localStorage.getItem("totalCost");
+    
+            
+            document.getElementById("room-name").textContent = roomName;
+            document.getElementById("check-in-date").textContent = checkInDate;
+            document.getElementById("check-out-date").textContent = checkOutDate;
+            document.getElementById("total-nights").textContent = totalNights;
+            document.getElementById("total-price").textContent = totalCost.toLocaleString();
+        };
+    
+        
+        function clearBookingData() {
+            localStorage.removeItem("roomName");
+            localStorage.removeItem("checkIn");
+            localStorage.removeItem("checkOut");
+            localStorage.removeItem("totalNights");
+            localStorage.removeItem("totalCost");
+        }
+    </script>
+    
+
+</body>
+</html>

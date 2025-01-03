@@ -15,11 +15,11 @@
             </div>
             <nav class="nav-bar">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="reservation.html">Reservations</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="reservation.html"><i class="fas fa-calendar-alt"></i> Reservations</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
                 </ul>
                 <div class="menu-icon">
                     <span></span>
@@ -27,120 +27,149 @@
                     <span></span>
                 </div>
             </nav>
-            <form action="loginpage.html" method="get">
-                <button type="submit" class="login-button">Log In</button>
-            </form>
+            <div id="loginContainer">
+                
+                <form action="loginpage.html" method="get" id="loginForm">
+                    <button type="submit" class="login-button" id="loginButton">Log In</button>
+                </form>
+    
+              
+                <div id="profileIcon" style="display: none;">
+                    <i class="fas fa-user-circle" style="font-size: 30px;"></i>
+                </div>
+            </div>
         </div> 
-        <script> 
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuIcon = document.querySelector('.menu-icon');
-            const navLinks = document.querySelector('.nav-links');
-        
-            menuIcon.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        });
-        </script>
     </header>
-
-    <section class="contact-section bg-gray-100 py-20">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center text-orange-600">
-                Get in Touch
-            </h2>
-            <div class="contact-container grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <div class="contact-info text-center">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">
-                        Contact Information
-                    </h3>      
-                    <div class="flex flex-col items-center">
-                        <p class="mb-2">
-                            <i class="fas fa-map-marker-alt text-orange-600"></i> 
-                            Baybay Street, Sitio San Juan, Brgy. Baybay, Roxas City
-                        </p>
-                        <p class="mb-2">
-                            <i class="fas fa-phone text-orange-600"></i> 
-                            +1 (036) 520-0445
-                        </p>
-                        <p class="mb-2">
-                            <i class="fas fa-envelope text-orange-600"></i> 
-                            casitajua.baybay@gmail.com
-                        </p>
-                    </div>
-                    <div class="social-media mt-4 flex justify-center">
-                        <a href="https://www.facebook.com/casitajuan.baybay" target="_blank"><i class="fab fa-facebook-f text-orange-600"></i></a>
-                        <a href="https://www.instagram.com/casitajuan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram text-orange-600"></i></a>
+    <section class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-container">
+         
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Baybay Street, Sitio San Juan, Brgy. Baybay, Roxas City</p>
+                    <p><i class="fas fa-phone"></i> +1 (036) 520-0445</p>
+                    <p><i class="fas fa-envelope"></i> casitajua.baybay@gmail.com</p>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/casitajuan.baybay" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/casitajuan" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
-                <div class="contact-form">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">
-                        Send Us a Message
-                    </h3>
-                    
-                    <form action="#" method="post">
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">
-                                Your Name
-                            </label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                placeholder="Enter your name...">
+            
+                <div class="contact-info">
+                    <h3>Our Location</h3>
+                    <div class="zoom-container">
+                        <img id="map-image" src="casitamap.jpg" alt="Our Location Map" class="zoom-image">
+                        <div class="zoom-buttons">
+                            <button onclick="zoomIn()">+</button>
+                            <button onclick="zoomOut()">-</button>
                         </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
-                                Your Email
-                            </label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                placeholder="Enter your email...">
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">
-                                Your Message
-                            </label>
-                            <textarea 
-                                id="message" 
-                                name="message" 
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                rows="5" 
-                                placeholder="Write your message here..."></textarea>
-                        </div>
-                        <button 
-                            type="submit" 
-                            class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus-shadow-outline">
-                            Send Message
-                        </button>
-                    </form>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Google Map Section -->
-            <div class="map-section mt-12">
-                <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">
-                    Find Us on the Map
-                </h3>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12275.273700048597!2d122.74907382054379!3d11.575459774689212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b701b7b900f927%3A0x479b77eb6b8d7d3d!2sBaybay%20Street%2C%20Sitio%20San%20Juan%2C%20Brgy.%20Baybay%2C%20Roxas%20City%2C%20Capiz%2C%20Philippines!5e0!3m2!1sen!2sus!4v1699524711991!5m2!1sen!2sus" 
-                        width="100%" 
-                        height="450" 
-                        frameborder="0" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        aria-hidden="false" 
-                        tabindex="0"></iframe>
-                </div>
-            </div>
-        </div>
+
+             
+<div class="contact-form" id="contactFormSection">
+    <h3>Send Us a Message</h3>
+    <form id="contactForm" action="#" method="post" onsubmit="handleFormSubmit(event)">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name..." required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+
+<div id="thankYouMessage" style="display:none; text-align:center;">
+    <h3>Thank you for texting!</h3>
+    <p>Your message has been sent successfully.</p>
+    <button onclick="goBack()" class="back-button">Back</button>
+</div>
+
+<script>
+    
+    function handleFormSubmit(event) {
+        event.preventDefault(); 
+        
+        document.getElementById('contactFormSection').style.display = 'none';
+
+       
+        document.getElementById('thankYouMessage').style.display = 'block';
+    }
+
+    
+    function goBack() {
+       
+        document.getElementById('thankYouMessage').style.display = 'none';
+
+        
+        document.getElementById('contactFormSection').style.display = 'block';
+
+        
+        document.getElementById('contactForm').reset();
+    }
+</script>
+
+
     </section>
+    <script>
+        let zoomLevel = 1;
+        
+        
+        function zoomIn() {
+            zoomLevel += 0.1;
+            document.getElementById('map-image').style.transform = `scale(${zoomLevel})`;
+        }
+
+        
+        function zoomOut() {
+            zoomLevel -= 0.1;
+            if (zoomLevel < 1) zoomLevel = 1;
+            document.getElementById('map-image').style.transform = `scale(${zoomLevel})`;
+        }
+    </script>
+    <script> 
+       
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        const closeMenu = document.querySelector('.close-menu');
+        
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        });
+        
+        
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('active');
+        });
+        
+            </script>
+    <script>
+        
+        const loginButton = document.getElementById('loginButton');
+        const profileIcon = document.getElementById('profileIcon');
+    
+       
+        if (localStorage.getItem('loggedIn') === 'true') {
+            loginButton.style.display = 'none';
+            profileIcon.style.display = 'block';
+        }
+    
+        
+        profileIcon.addEventListener('click', function() {
+            localStorage.removeItem('loggedIn'); 
+            window.location.href = 'loginpage.html'; 
+        });
+    </script>
     <footer>
         <div class="footer-menu">
             <ul>
@@ -151,7 +180,7 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
-        <p>&copy; 2023 Casita Juan Beach. All Rights Reserved.</p>
+        <p>&copy; 2024 Casita Juan Beach. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

@@ -3,103 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation - Casita Juan Beach Resort</title>
+    <title>Casita Juan Beach</title>
     <link rel="stylesheet" href="reservation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <header>
-        <div class="header-content"> 
-            <div class="logo">
-                <img src="casita.png" alt="Casita Juan Beach Resort Logo">
-            </div>
-            <nav class="nav-bar">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="reservation.html">Reservations</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-            <form action="loginpage.html" method="get">
-                <button type="submit" class="login-button">Log In</button>
-            </form>
-        </div> 
-        <script> 
-            document.addEventListener('DOMContentLoaded', () => {
-                const menuIcon = document.querySelector('.menu-icon');
-                const navLinks = document.querySelector('.nav-links');
-            
-                menuIcon.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            });
-            </script>
-    </header>
-
-    <section class="reservation-section">
-        <div class="container">
-            <h2>Make Your Reservation</h2>
-            <p>Escape to paradise. Secure your stay at Casita Juan Beach Resort and experience the ultimate coastal getaway.</p>
-
-            <form action="thank-you.html" method="POST" class="reservation-form">
-                <div class="input-group">
-                    <label for="check-in">Check-in Date</label>
-                    <input type="date" id="check-in" name="check-in" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="check-out">Check-out Date</label>
-                    <input type="date" id="check-out" name="check-out" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="guests">Number of Guests</label>
-                    <input type="number" id="guests" name="guests" min="1" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="room">Room Type</label>
-                    <select id="room" name="room" required>
-                        <option value="standard">Standard Room</option>
-                        <option value="deluxe">Deluxe Room</option>
-                        <option value="suite">Beachfront Suite</option>
-                        <option value="couple">Couple's Room</option>
-                        <option value="loft">Loft Room</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="special-requests">Special Requests (Optional)</label>
-                    <textarea id="special-requests" name="special-requests" placeholder="Any special requests or notes"></textarea>
-                </div>
-
-                <div class="actions">
-                    <button type="submit" class="reserve-btn">Reserve Now</button>
-                </div>
-            </form>
+<header>
+    <div class="header-content"> 
+        <div class="logo">
+            <img src="casita.png" alt="Casita Juan Beach Resort Logo">
         </div>
-    </section>
-
-    <footer>
-        <div class="footer-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="reservation.html">Reservations</a></li>
-                <li><a href="contact.html">Contact</a></li>
+        <nav class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="reservation.html"><i class="fas fa-calendar-alt"></i> Reservations</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
             </ul>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div id="loginContainer">
+            <form action="loginpage.html" method="get" id="loginForm">
+                <button type="submit" class="login-button" id="loginButton">Log In</button>
+            </form>
+            <div id="profileIcon" style="display: none;">
+                <i class="fas fa-user-circle" style="font-size: 30px;"></i>
+            </div>
         </div>
-        <p>&copy; 2024 Casita Juan Beach. All Rights Reserved.</p>
-    </footer>
+    </div> 
+</header>
+
+
+<section class="reservation-section">
+    <div class="container">
+        <h2>Make Your Reservation</h2>
+        <p>Escape to paradise. Secure your stay at Casita Juan Beach Resort and experience the ultimate coastal getaway.</p>
+
+        <form id="reservationForm" class="reservation-form">
+            <div class="input-group">
+                <label for="check-in">Check-in Date</label>
+                <input type="date" id="check-in" name="check-in" required>
+            </div>
+
+            <div class="input-group">
+                <label for="check-out">Check-out Date</label>
+                <input type="date" id="check-out" name="check-out" required>
+            </div>
+
+            <div class="input-group">
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+            </div>
+
+            <div class="input-group">
+                <label for="room">Room Type</label>
+                <select id="room" name="room" required>
+                    <option value="couple" data-price="2700">Couple's Room - Php 2,700</option>
+                    <option value="loft2pax" data-price="3200">Loft Room (2 pax) - Php 3,200</option>
+                    <option value="loft3pax" data-price="3750">Loft Room (3 pax) - Php 3,750</option>
+                    <option value="loft4pax" data-price="4500">Loft Room (4 pax) - Php 4,500</option>
+                    <option value="loft5pax" data-price="5250">Loft Room (5 pax) - Php 5,250 (Extra mattress & pillows)</option>
+                    <option value="loft6pax" data-price="6000">Loft Room (6 pax) - Php 6,000 (2 extra mattresses & pillows)</option> 
+                    <option value="exclusive17to20" data-price="22000">Exclusive Use of the Whole Casita (17-20 pax) - Php 22,000</option>
+                    <option value="exclusive22to28" data-price="25000">Exclusive Use of the Whole Casita (22-28 pax) - Php 25,000</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="price">Price</label>
+                <input type="text" id="price" name="price" readonly>
+            </div>
+
+            <div class="input-group">
+                <label for="total">Total Cost</label>
+                <input type="text" id="total-cost" name="total-cost" readonly>
+            </div>
+
+            <div class="input-group">
+                <label for="special-requests">Special Requests (Optional)</label>
+                <textarea id="special-requests" name="special-requests" placeholder="Any special requests or notes"></textarea>
+            </div>
+
+            <div class="actions">
+                <button type="button" class="reserve-btn" onclick="validateAndRedirect()">Reserve Now</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reservation.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <p>&copy; 2024 Casita Juan Beach. All Rights Reserved.</p>
+</footer>
+
+<script>
+  
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    
+    function validateAndRedirect() {
+        var form = document.getElementById('reservationForm');
+        var checkIn = document.getElementById('check-in').value;
+        var checkOut = document.getElementById('check-out').value;
+        var guests = document.getElementById('guests').value;
+        var room = document.getElementById('room').value;
+
+        if (!checkIn || !checkOut || !guests || !room) {
+            alert("Please fill in all required fields before proceeding.");
+            return; 
+        }
+
+        window.location.href = 'after.html';
+    }
+
+    
+    document.getElementById('room').addEventListener('change', updateReservationDetails);
+    document.getElementById('check-in').addEventListener('change', updateReservationDetails);
+    document.getElementById('check-out').addEventListener('change', updateReservationDetails);
+
+    function updateReservationDetails() {
+        var selectedOption = document.getElementById('room').selectedOptions[0];
+        var pricePerNight = parseFloat(selectedOption.getAttribute('data-price'));
+
+        var checkInDate = new Date(document.getElementById('check-in').value);
+        var checkOutDate = new Date(document.getElementById('check-out').value);
+
+        var timeDifference = checkOutDate - checkInDate;
+        var numberOfNights = timeDifference / (1000 * 3600 * 24);
+
+        if (numberOfNights > 0) {
+            var totalCost = pricePerNight * numberOfNights;
+            document.getElementById('price').value = 'Php ' + pricePerNight.toLocaleString() + ' per night';
+            document.getElementById('total-cost').value = 'Php ' + totalCost.toLocaleString();
+        } else {
+            document.getElementById('price').value = '';
+            document.getElementById('total-cost').value = 'Please select valid check-in and check-out dates';
+        }
+    }
+
+    window.onload = function() {
+        updateReservationDetails();
+    };
+</script>
 
 </body>
 </html>

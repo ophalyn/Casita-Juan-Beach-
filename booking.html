@@ -5,77 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casita Juan Beach Resort - Booking</title>
   <link rel="stylesheet" href="booking.css">
+  <script>
+    
+    function getTodaysDate() {
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0');
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const yyyy = today.getFullYear();
+      return yyyy + '-' + mm + '-' + dd; 
+    }
+
+
+    function validateDates(roomId) {
+      const checkInDate = document.getElementById("check-in-" + roomId).value;
+      const checkOutDate = document.getElementById("check-out-" + roomId).value;
+
+      if (checkInDate && checkOutDate) {
+        const checkIn = new Date(checkInDate);
+        const checkOut = new Date(checkOutDate);
+
+        if (checkOut <= checkIn) {
+          alert("Check-out date must be after the check-in date.");
+          document.getElementById("check-out-" + roomId).value = ''; 
+        } else {
+          calculateNights(checkInDate, checkOutDate, roomId);
+        }
+      }
+    }
+
+    function calculateNights(checkInDate, checkOutDate, roomId) {
+      const roomPrice = document.getElementById("room-price-" + roomId).value;
+      const checkIn = new Date(checkInDate);
+      const checkOut = new Date(checkOutDate);
+      
+      const timeDifference = checkOut - checkIn;
+      const days = timeDifference / (1000 * 3600 * 24);
+
+      if (days > 0) {
+        document.getElementById("total-nights-" + roomId).textContent = `Total Nights: ${days}`;
+        const totalCost = roomPrice * days;
+        document.getElementById("total-cost-" + roomId).textContent = `Total Cost: PHP ${totalCost.toLocaleString()}`;
+        
+    
+        localStorage.setItem("roomName", document.getElementById("room-name-" + roomId).textContent);
+        localStorage.setItem("checkIn", checkInDate);
+        localStorage.setItem("checkOut", checkOutDate);
+        localStorage.setItem("totalNights", days);
+        localStorage.setItem("totalCost", totalCost);
+      } else {
+        document.getElementById("total-nights-" + roomId).textContent = `Please select a valid date range.`;
+        document.getElementById("total-cost-" + roomId).textContent = '';
+      }
+    }
+
+
+    function setDateLimits(roomId) {
+      const checkInElement = document.getElementById("check-in-" + roomId);
+      const checkOutElement = document.getElementById("check-out-" + roomId);
+      
+      checkInElement.min = getTodaysDate();
+      checkInElement.addEventListener('change', function() {
+        const checkInDate = new Date(checkInElement.value);
+        checkOutElement.min = checkInDate.toISOString().split('T')[0]; 
+      });
+
+      checkOutElement.addEventListener('change', function() {
+        validateDates(roomId);
+      });
+    }
+
+    window.onload = function() {
+     
+      setDateLimits(1);
+      setDateLimits(2);
+      setDateLimits(3);
+      setDateLimits(4);
+      setDateLimits(5);
+      setDateLimits(6);
+    };
+  </script>
 </head>
 <body>
 
-  <header>
-    <div class="header-content"> 
-        <div class="logo">
-            <img src="casita.png" alt="Casita Juan Beach Resort Logo">
-        </div>
-        <nav class="nav-bar">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="reservation.html">Reservations</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-        <form action="loginpage.html" method="get">
-            <button type="submit" class="login-button">Log In</button>
-        </form>
-    </div> <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuIcon = document.querySelector('.menu-icon');
-      const navLinks = document.querySelector('.nav-links');
-  
-      menuIcon.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-      });
-  });
-</script>
-</header>
+
+
+<div class="back-button-container">
+  <a href="index.html">
+    <button class="back-button">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </button>
+  </a>
+</div>
+
+
 
   <main>
     <section id="rooms">
-      <h2>Our Rooms</h2>
+      <h2>Rush Book - Secure Your Stay Now</h2>
+      <p>Our exclusive rooms are available for immediate booking. Don't miss out on a memorable experience at Casita Juan Beach Resort. Choose the room that best suits your needs and reserve it now for a hassle-free vacation.</p>
+
       <div class="room-cards">
 
-        <!-- Couple's Room -->
+        
         <div class="room-card">
           <img src="room5.jpg" alt="Couple's Room">
-          <h3>Couple's Room</h3>
+          <h3 id="room-name-1">Couple's Room</h3>
           <p><strong>PHP 2,700 per night</strong></p>
+          <input type="hidden" id="room-price-1" value="2700">
           <ul>
             <li>Air-conditioned room with queen-sized bed</li>
             <li>Private toilet & bath</li>
             <li>Towels, shampoo & body wash provided</li>
             <li>Inclusive of breakfast</li>
           </ul>
-          <button class="book-button" data-room-id="couples-room">Book Now</button>
+
+        
+          <label for="check-in">Check-in Date:</label>
+          <input type="date" id="check-in-1" onchange="calculateNights(document.getElementById('check-in-1').value, document.getElementById('check-out-1').value, 1)">
+          
+          <label for="check-out">Check-out Date:</label>
+          <input type="date" id="check-out-1" onchange="calculateNights(document.getElementById('check-in-1').value, document.getElementById('check-out-1').value, 1)">
+          
+          <p id="total-nights-1"></p>
+          <p id="total-cost-1"></p>
+
+       
+          <a href="afterbook.html" class="book-now-button" aria-label="Click to book now">Book Now</a>
         </div>
 
-        <!-- Loft Room for 2 pax -->
+        
         <div class="room-card">
           <img src="room2.jpg" alt="Loft Room for 2 Pax">
-          <h3>Loft Room (2 Pax)</h3>
+          <h3 id="room-name-2">Loft Room (2 Pax)</h3>
           <p><strong>PHP 3,200 per night</strong></p>
+          <input type="hidden" id="room-price-2" value="3200">
           <ul>
             <li>Air-conditioned loft-type room</li>
             <li>Private toilet & bath</li>
             <li>Towels, shampoo & body wash provided</li>
             <li>Inclusive of breakfast</li>
           </ul>
-          <button class="book-button" data-room-id="loft-2">Book Now</button>
+
+    
+          <label for="check-in">Check-in Date:</label>
+          <input type="date" id="check-in-2" onchange="calculateNights(document.getElementById('check-in-2').value, document.getElementById('check-out-2').value, 2)">
+          
+          <label for="check-out">Check-out Date:</label>
+          <input type="date" id="check-out-2" onchange="calculateNights(document.getElementById('check-in-2').value, document.getElementById('check-out-2').value, 2)">
+          
+          <p id="total-nights-2"></p>
+          <p id="total-cost-2"></p>
+
+       
+          <a href="afterbook.html" class="book-now-button" aria-label="Click to book now">Book Now</a>
         </div>
 
-        <!-- Loft Room for 3 pax -->
+
         <div class="room-card">
           <img src="room3.jpg" alt="Loft Room for 3 Pax">
           <h3>Loft Room (3 Pax)</h3>
@@ -86,10 +171,22 @@
             <li>Towels, shampoo & body wash provided</li>
             <li>Inclusive of breakfast</li>
           </ul>
-          <button class="book-button" data-room-id="loft-3">Book Now</button>
+
+
+          <label for="check-in">Check-in Date:</label>
+          <input type="date" id="check-in-3" onchange="calculateNights(document.getElementById('check-in-3').value, document.getElementById('check-out-3').value, 3)">
+          
+          <label for="check-out">Check-out Date:</label>
+          <input type="date" id="check-out-3" onchange="calculateNights(document.getElementById('check-in-3').value, document.getElementById('check-out-3').value, 3)">
+          
+          <p id="total-nights-3"></p>
+          <p id="total-cost-3"></p>
+
+          
+          <a href="afterbook.html" class="book-now-button" aria-label="Click to book now">Book Now</a>
         </div>
 
-        <!-- Loft Room for 4 pax -->
+    
         <div class="room-card">
           <img src="room4.jpg" alt="Loft Room for 4 Pax">
           <h3>Loft Room (4 Pax)</h3>
@@ -100,10 +197,21 @@
             <li>Towels, shampoo & body wash provided</li>
             <li>Inclusive of breakfast</li>
           </ul>
-          <button class="book-button" data-room-id="loft-4">Book Now</button>
+
+       
+          <label for="check-in">Check-in Date:</label>
+          <input type="date" id="check-in-4" onchange="calculateNights(document.getElementById('check-in-4').value, document.getElementById('check-out-4').value, 4)">
+          
+          <label for="check-out">Check-out Date:</label>
+          <input type="date" id="check-out-4" onchange="calculateNights(document.getElementById('check-in-4').value, document.getElementById('check-out-4').value, 4)">
+          
+          <p id="total-nights-4"></p>
+          <p id="total-cost-4"></p>
+
+          <a href="afterbook.html" class="book-now-button" aria-label="Click to book now">Book Now</a>
         </div>
 
-        <!-- Loft Room for 5 pax -->
+       
         <div class="room-card">
           <img src="room1.jpg" alt="Loft Room for 5 Pax">
           <h3>Loft Room (5 Pax)</h3>
@@ -115,10 +223,22 @@
             <li>Inclusive of breakfast</li>
             <li>Extra mattresses & pillows available</li>
           </ul>
-          <button class="book-button" data-room-id="loft-5">Book Now</button>
+
+       
+          <label for="check-in">Check-in Date:</label>
+          <input type="date" id="check-in-5" onchange="calculateNights(document.getElementById('check-in-5').value, document.getElementById('check-out-5').value, 5)">
+          
+          <label for="check-out">Check-out Date:</label>
+          <input type="date" id="check-out-5" onchange="calculateNights(document.getElementById('check-in-5').value, document.getElementById('check-out-5').value, 5)">
+          
+          <p id="total-nights-5"></p>
+          <p id="total-cost-5"></p>
+
+   
+          <a href="afterbook.html" class="book-now-button" aria-label="Click to book now">Book Now</a>
         </div>
 
-        <!-- Exclusive Use of Resort -->
+        
         <div class="room-card">
           <img src="wholecasita.jpg" alt="Exclusive Resort Use">
           <h3>Exclusive Use of the Whole Resort</h3>
@@ -127,21 +247,58 @@
           <ul>
             <li>Exclusive access for 17 to 28 guests</li>
             <li>No private dinners for outside guests</li>
-            <li>Quiet time must be followed</li>
             <li>Breakfast for registered guests only</li>
-            <li>Sneak-in guests are charged PHP 1,500 per person</li>
           </ul>
-          <button class="book-button" data-room-id="exclusive-resort">Book Now</button>
+
+       
+          <label for="check-in">Check-in Date:</label>
+          <input type="date" id="check-in-6" onchange="calculateNights(document.getElementById('check-in-6').value, document.getElementById('check-out-6').value, 6)">
+          
+          <label for="check-out">Check-out Date:</label>
+          <input type="date" id="check-out-6" onchange="calculateNights(document.getElementById('check-in-6').value, document.getElementById('check-out-6').value, 6)">
+          
+          <p id="total-nights-6"></p>
+          <p id="total-cost-6"></p>
+
+          <a href="afterbook.html" class="book-now-button" aria-label="Click to book now">Book Now</a>
         </div>
 
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2024 Casita Juan Beach Resort. All Rights Reserved.</p>
-  </footer>
+  <script>
+    
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+    const closeMenu = document.querySelector('.close-menu');
+    
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuIcon.classList.toggle('active');
+    });
+    
+    closeMenu.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuIcon.classList.remove('active');
+    });
+  </script>
 
-  <script src="script.js"></script>
+  <script>
+   
+    const loginButton = document.getElementById('loginButton');
+    const profileIcon = document.getElementById('profileIcon');
+    
+    if (localStorage.getItem('loggedIn') === 'true') {
+        loginButton.style.display = 'none';
+        profileIcon.style.display = 'block';
+    }
+
+    profileIcon.addEventListener('click', () => {
+        localStorage.setItem('loggedIn', 'false');
+        window.location.reload();
+    });
+  </script>
+
 </body>
 </html>

@@ -3,49 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Casita Juan Beach Resort</title>
+    <title>Login & Sign Up Form</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div class="back-to-home">
+        <button id="back-button" onclick="window.location.href='index.html'">Back</button>
+    </div>
 
-    <header>
-        <div class="logo-container">
-            <img src="casita.png" alt="Casita Juan Beach Logo" class="logo">
+    <div class="welcome-text">
+        <h1>Welcome!</h1>
+        <p>Please sign in or sign up to continue</p>
+    </div>
+
+    <div class="form-container">
+        <div class="form-toggle">
+            <button id="login-toggle" class="active">Login</button>
+            <button id="signup-toggle">Sign Up</button>
         </div>
-    </header>
 
-    <section class="login-section">
-        <div class="login-container">
-            <h2>Welcome!</h2>
-            <p>Please log in to your account</p>
-
-            <form action="dashboard.html" method="POST" class="login-form">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username..." required>
-                </div>
-
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password..." required>
-                </div>
-
-                <div class="actions">
-                    <button type="submit" class="login-btn">Login</button>
-                    <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
-                </div>
-            </form>
-
-            <div class="signup-link">
-                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+       
+        <div class="form-content" id="login-form">
+            <div class="input-box animation">
+                <input type="text" required id="login-username">
+                <label for="">Username</label>
+                <i class='bx bxs-user'></i>
             </div>
+
+            <div class="input-box animation">
+                <input type="password" required id="login-password">
+                <label for="">Password</label>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <button type="submit" id="login-submit">Login</button>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 Casita Juan Beach Resort. All Rights Reserved.</p>
-    </footer>
+     
+        <div class="form-content" id="signup-form" style="display: none;">
+            <div class="input-box animation">
+                <input type="text" required id="signup-username">
+                <label for="">Username</label>
+                <i class='bx bxs-user'></i>
+            </div>
 
+            <div class="input-box animation">
+                <input type="email" required id="signup-email">
+                <label for="">Email</label>
+                <i class='bx bxs-envelope'></i>
+            </div>
+
+            <div class="input-box animation">
+                <input type="password" required id="signup-password">
+                <label for="">Password</label>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <button type="submit" id="signup-submit">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="profile-section" id="profile-section" style="display: none;">
+        <button id="profile-button">
+            <i class="bx bx-user"></i> Profile
+        </button>
+    </div>
+
+    <script>
+        const loginToggle = document.getElementById('login-toggle');
+        const signupToggle = document.getElementById('signup-toggle');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+
+        const loginUsername = document.getElementById('login-username');
+        const loginPassword = document.getElementById('login-password');
+        const signupUsername = document.getElementById('signup-username');
+        const signupEmail = document.getElementById('signup-email');
+        const signupPassword = document.getElementById('signup-password');
+
+        const loginSubmit = document.getElementById('login-submit');
+        const signupSubmit = document.getElementById('signup-submit');
+
+        const profileSection = document.getElementById('profile-section');
+        const profileButton = document.getElementById('profile-button');
+
+        function toggleForm(event) {
+            if (event.target === loginToggle) {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                loginToggle.classList.add('active');
+                signupToggle.classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                signupToggle.classList.add('active');
+                loginToggle.classList.remove('active');
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = loginUsername.value.trim();
+            const password = loginPassword.value.trim();
+
+            if (username && password) {
+                alert("Login successful!");
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = "index.html";
+            } else {
+                alert("Please enter both username and password.");
+            }
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const username = signupUsername.value.trim();
+            const email = signupEmail.value.trim();
+            const password = signupPassword.value.trim();
+
+            if (username && email && password) {
+                alert("Sign Up successful!");
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = "index.html"; 
+                alert("Please fill in all fields.");
+            }
+        }
+
+        loginToggle.addEventListener('click', toggleForm);
+        signupToggle.addEventListener('click', toggleForm);
+        loginSubmit.addEventListener('click', handleLogin);
+        signupSubmit.addEventListener('click', handleSignup);
+    </script>
 </body>
 </html>

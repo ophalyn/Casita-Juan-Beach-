@@ -3,75 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casita Juan Beach Resort</title>
+    <title>Casita Juan Beach</title>
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Casita Juan Beach Resort</title>
-        <link rel="stylesheet" href="about.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
-    
-
-        <header>
-            <div class="header-content"> 
-                <div class="logo">
-                    <img src="casita.png" alt="Casita Juan Beach Resort Logo">
+    <header>
+        <div class="header-content"> 
+            <div class="logo">
+                <img src="casita.png" alt="Casita Juan Beach Resort Logo">
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="reservation.html"><i class="fas fa-calendar-alt"></i> Reservations</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                </ul>
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <nav class="nav-bar">
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="reservation.html">Reservations</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                    <div class="menu-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-                <form action="loginpage.html" method="get">
-                    <button type="submit" class="login-button">Log In</button>
+            </nav>
+            <div id="loginContainer">
+                
+                <form action="loginpage.html" method="get" id="loginForm">
+                    <button type="submit" class="login-button" id="loginButton">Log In</button>
                 </form>
-            </div> 
-            <script>
-                const menuIcon = document.querySelector('.menu-icon');
-                const navLinks = document.querySelector('.nav-links');
-            
-                menuIcon.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            </script>
-            
-        </header>
+    
+               
+                <div id="profileIcon" style="display: none;">
+                    <i class="fas fa-user-circle" style="font-size: 30px;"></i>
+                </div>
+            </div>
+        </div> 
+    </header>
       
     <section id="about">
         <div class="container">
             <h2>Welcome to Casita Juan Beach Resort</h2>
 
-            <p>This is your home away from home.
-                An escape from the busy city life, crowded beaches and away from throngs of tourists. Stay in our rustic beach house located along the Baybay Beach of Roxas City, Capiz, in the island of Panay.</p>
+            <p>This is your home away from home, an escape from the busy city life, crowded beaches, and the throngs of tourists. Stay in our rustic beach house located along the Baybay Beach of Roxas City, Capiz, on the island of Panay.</p>
+
             <p>Discover a tranquil escape where sun-kissed beaches, azure waters, and luxury blend seamlessly to create an unforgettable experience.</p>
-            <img src="juan.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+
+            <section class="slideshow-container">
+                <div class="slideshow">
+                    <img src="juan.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery5.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery6.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery10.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery11.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery12.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery13.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery14.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery15.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery8.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                    <img src="gallery9.jpg" alt="Casita Juan Beach Resort" class="resort-image">
+                </div>
+            </section>
+
             <p>
                 Nestled along the golden sands and sparkling waters, Casita Juan Beach Resort is your perfect seaside escape. From breathtaking views to top-tier amenities, every moment spent here promises to be a treasure.
             </p>
+
             <p>
                 Our resort offers elegant and spacious rooms with scenic views, gourmet dining experiences featuring local and international flavors, and a wide range of activities to make your stay truly remarkable.
             </p>
+
             <p>
                 Whether you want to relax by the beach, indulge in spa treatments, or explore the vibrant local culture, Casita Juan Beach Resort is the ultimate destination for families, couples, and solo travelers.
             </p>
+
             <p>
                 Join us at Casita Juan Beach Resort, where the beauty of the ocean and the warmth of the community come together to create lasting memories.
             </p>
@@ -79,10 +85,7 @@
     </section>
 
     <footer>
-
-
         <div class="footer-content">
-            
             <ul class="footer-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -91,9 +94,70 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <p>&copy; 2024 Casita Juan Beach Resort. All Rights Reserved.</p>
-        
         </div>
     </footer>
+
+    <script> 
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        const closeMenu = document.querySelector('.close-menu');
+        
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('active');
+        });
+    </script>
+
+    <script>
+        
+        const loginButton = document.getElementById('loginButton');
+        const profileIcon = document.getElementById('profileIcon');
+
+        
+        if (localStorage.getItem('loggedIn') === 'true') {
+            loginButton.style.display = 'none';
+            profileIcon.style.display = 'block';
+        }
+
+       
+        profileIcon.addEventListener('click', function() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'loginpage.html'; 
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.resort-image');
+            let currentIndex = 0;
+
+            function showNextImage() {
+              
+                images[currentIndex].style.display = 'none';
+                
+                
+                currentIndex = (currentIndex + 1) % images.length;
+                
+               
+                images[currentIndex].style.display = 'block';
+            }
+
+            
+            images.forEach((image, index) => {
+                if (index !== 0) {
+                    image.style.display = 'none';
+                }
+            });
+
+            
+            setInterval(showNextImage, 3000);
+        });
+    </script>
 
 </body>
 </html>

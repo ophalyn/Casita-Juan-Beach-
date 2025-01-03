@@ -2,133 +2,86 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, rgba(225, 228, 230, 0.6), rgba(125, 128, 133, 0.6)), url('beach-background.jpg');
-  background-color: #f8f8f8;
+  background: linear-gradient(135deg, rgba(146, 147, 148, 0.6), rgba(125, 128, 133, 0.6));
+  background-size: cover; 
+  background-position: center;
   color: #333;
   line-height: 1.6;
 }
 
-
-header {
-  background-color: #f8f8f8;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 100;
-}
-
-.header-content { 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.logo img {
-  height: 50px;
-}
-
-.nav-bar {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links li {
-  margin: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  padding: 10px 15px;
-}
-
-.nav-links a:hover {
-  color: #f9f9f9;
-  background-color: #333;
-}
-
-.menu-icon {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-icon span {
-  background-color: #000;
-  height: 3px;
-  width: 25px;
-  margin-bottom: 4px;
-}
-
-.login-button {
-  background-color: #000;
+.back-button {
+  background-color: #000000;
   color: #fff;
   border: none;
   padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
-.login-button:hover {
-  background-color: #777a7e;
-  transform: scale(1.2);
+.back-button:hover {
+  background-color: #7c7c7c; 
+  transform: scale(1.05);
+}
+
+.back-button i {
+  margin-right: 8px; 
 }
 
 
-@media (max-width: 768px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: #eae2e2;
-      width: 100%;
-  }
-
-  .nav-links.active {
-      display: flex;
-  }
-
-  .menu-icon {
-      display: flex;
-  }
-
-  .login-button {
-      padding: 8px 15px;
-  }
-
-  .header-content {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between; 
-  }
+.back-button i {
+  font-size: 18px; 
 }
 
+
+.back-button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+.back-button-with-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-button-with-icon i {
+  margin-right: 8px;
+}
 
 #rooms {
-  padding: 80px 20px 40px;
+  padding: 100px 20px 40px;
   text-align: center;
 }
 
 h2 {
-  font-size: 36px;
-  color: #000;  
-  margin-bottom: 40px;
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
 }
+
+h2 span {
+  color: #727272; 
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 
 .room-cards {
   display: grid;
@@ -137,35 +90,44 @@ h2 {
 }
 
 .room-card {
-  background-color: #fff;  
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
   text-align: left;
+  transition: all 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .room-card img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  height: 200px;
+  height: 250px;
 }
 
 .room-card h3 {
-  font-size: 24px;
-  color: #000; 
+  font-size: 26px;
+  color: #333;
   margin-top: 15px;
+  font-weight: 600;
 }
 
 .room-card p {
   font-size: 18px;
   margin-bottom: 15px;
+  color: #777;
 }
 
 .room-card ul {
   list-style-type: none;
   font-size: 16px;
   margin-bottom: 15px;
+  color: #555;
 }
 
 .room-card ul li {
@@ -173,27 +135,26 @@ h2 {
 }
 
 .room-card .book-button {
-  background-color: #000;  
+  background-color: #000;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .room-card .book-button:hover {
   background-color: #777a7e;
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-
 footer {
-  background-color: #333; 
+  background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 25px 0;
   position: relative;
   bottom: 0;
   width: 100%;
@@ -201,8 +162,9 @@ footer {
 
 footer p {
   font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
-
 
 @media (max-width: 768px) {
   .menu-icon {
@@ -213,7 +175,7 @@ footer p {
     position: absolute;
     top: 60px;
     right: 0;
-    background-color: #f8f8f8;  
+    background-color: #f8f8f8;
     width: 200px;
     padding: 10px 0;
     display: none;
@@ -230,7 +192,75 @@ footer p {
   }
 
   .nav-links a {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+    font-size: 16px;
   }
+}
+
+.book-now-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: auto;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none; /* Remove underline */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.book-now-button:hover {
+  background-color: #777a7e;
+  transform: scale(1.05);
+}
+
+
+
+/* Enhanced booking form styles */
+.room-card .booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.room-card .booking-form label {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.room-card .booking-form input[type="date"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.room-card .booking-form input[type="date"]:focus {
+  outline: none;
+  border-color: #000;
+  background-color: #fff;
+}
+
+.room-card .booking-form p {
+  font-size: 16px;
+  color: #333;
+}
+
+.room-card .booking-form .book-now-button {
+  margin-top: 20px;
+  width: auto; /* Adjusted width */
+}
+
+.room-card .booking-form .dates-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
