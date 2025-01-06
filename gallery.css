@@ -13,7 +13,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.9); 
   z-index: 100;
@@ -32,7 +32,7 @@ header:hover {
 }
 
 .logo img {
-  width: 120px; 
+  width: 90px; 
   height: auto; 
   transition: transform 0.3s ease;
 }
@@ -64,7 +64,7 @@ header:hover {
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  padding: 8px 12px;
+  padding: 6px 10px;
   font-size: 14px; 
 }
 
@@ -116,7 +116,7 @@ header:hover {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 100px;
+      top: 60px;
       right: 0;
       background-color: #eae2e2;
       width: 100%;
@@ -140,70 +140,6 @@ header:hover {
       justify-content: space-between; 
   }
 }
-
-
-
-.menu-icon {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-icon span {
-  background-color: #000;
-  height: 3px;
-  width: 25px;
-  margin-bottom: 4px;
-}
-
-.login-button {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.login-button:hover {
-  background-color: #777a7e;
-  transform: scale(1.2);
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 150px;
-    right: 0;
-    background-color: #eae2e2;
-    width: 100%;
-    z-index: 105;
-    transition: transform 0.3s ease;
-  }
-
-  .nav-links.active {
-      display: flex;
-  }
-
-  .menu-icon {
-      display: flex;
-  }
-
-  .login-button {
-      padding: 8px 15px;
-  }
-
-  .header-content { 
-      flex-direction: row; 
-      align-items: center; 
-      justify-content: space-between; 
-  }
-}
-
-/* Gallery Section */
 .gallery-section {
   text-align: center;
   padding: 50px 20px;
@@ -241,11 +177,10 @@ header:hover {
   z-index: 10000;
 }
 
-/* Ensure all images are the same size */
 .gallery-image {
   width: 100%;
-  height: 300px; /* Fixed height */
-  object-fit: cover; /* Ensures images cover the container without distorting */
+  height: 300px; 
+  object-fit: cover; 
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -253,7 +188,7 @@ header:hover {
   transform: scale(1.1);
 }
 
-/* Overlay */
+
 .overlay {
   position: absolute;
   top: 0;
@@ -277,7 +212,7 @@ header:hover {
   opacity: 1;
 }
 
-  /* Section Title and Description */
+  
     .room-section h2 {
         font-size: 36px;
         font-weight: bold;
@@ -292,7 +227,7 @@ header:hover {
         color: #555;
     }
 
-    /* Room Container */
+
     .room-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -301,7 +236,7 @@ header:hover {
         justify-items: center;
     }
 
-    /* Room Item Styling */
+    
     .room-item {
         background-color: #fff;
         border-radius: 10px;
@@ -329,7 +264,7 @@ header:hover {
         color: #333;
     }
 
-    /* Room Rating Stars */
+  
     .room-rating {
         display: flex;
         justify-content: center;
@@ -341,7 +276,7 @@ header:hover {
         color: gold;
     }
 
-    /* Responsive Design */
+ 
     @media (max-width: 768px) {
         .room-section h2 {
             font-size: 30px;
@@ -369,7 +304,7 @@ header:hover {
             font-size: 18px;
         }
     }
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .gallery-container, .room-container {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
