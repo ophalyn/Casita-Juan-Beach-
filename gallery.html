@@ -29,17 +29,6 @@
                     <span></span>
                 </div>
             </nav>
-            <div id="loginContainer">
-                <!-- Initially display login button -->
-                <form action="loginpage.html" method="get" id="loginForm">
-                    <button type="submit" class="login-button" id="loginButton">Log In</button>
-                </form>
-    
-                <!-- Profile icon that is hidden by default -->
-                <div id="profileIcon" style="display: none;">
-                    <i class="fas fa-user-circle" style="font-size: 30px;"></i>
-                </div>
-            </div>
         </div> 
     </header>
 <section class="gallery-section">
@@ -181,22 +170,5 @@
     });
     
         </script>
-<script>
-    // Check if the user is logged in using localStorage
-    const loginButton = document.getElementById('loginButton');
-    const profileIcon = document.getElementById('profileIcon');
-
-    // If the user is logged in, hide the login button and show the profile icon
-    if (localStorage.getItem('loggedIn') === 'true') {
-        loginButton.style.display = 'none';
-        profileIcon.style.display = 'block';
-    }
-
-    // Log out and redirect to the login page
-    profileIcon.addEventListener('click', function() {
-        localStorage.removeItem('loggedIn'); // Log out the user
-        window.location.href = 'loginpage.html'; // Redirect to login page
-    });
-</script>
 </body>
 </html>

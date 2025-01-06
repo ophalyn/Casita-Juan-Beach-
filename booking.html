@@ -284,21 +284,5 @@
     });
   </script>
 
-  <script>
-   
-    const loginButton = document.getElementById('loginButton');
-    const profileIcon = document.getElementById('profileIcon');
-    
-    if (localStorage.getItem('loggedIn') === 'true') {
-        loginButton.style.display = 'none';
-        profileIcon.style.display = 'block';
-    }
-
-    profileIcon.addEventListener('click', () => {
-        localStorage.setItem('loggedIn', 'false');
-        window.location.reload();
-    });
-  </script>
-
 </body>
 </html>

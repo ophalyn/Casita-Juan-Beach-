@@ -27,17 +27,6 @@
                     <span></span>
                 </div>
             </nav>
-            <div id="loginContainer">
-                
-                <form action="loginpage.html" method="get" id="loginForm">
-                    <button type="submit" class="login-button" id="loginButton">Log In</button>
-                </form>
-    
-              
-                <div id="profileIcon" style="display: none;">
-                    <i class="fas fa-user-circle" style="font-size: 30px;"></i>
-                </div>
-            </div>
         </div> 
     </header>
     <section class="contact-section">
@@ -70,52 +59,34 @@
 
 
              
-<div class="contact-form" id="contactFormSection">
-    <h3>Send Us a Message</h3>
-    <form id="contactForm" action="#" method="post" onsubmit="handleFormSubmit(event)">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name..." required>
-
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email..." required>
-
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
-
-        <button type="submit">Send Message</button>
-    </form>
-</div>
-
-
-<div id="thankYouMessage" style="display:none; text-align:center;">
-    <h3>Thank you for texting!</h3>
-    <p>Your message has been sent successfully.</p>
-    <button onclick="goBack()" class="back-button">Back</button>
-</div>
-
-<script>
-    
-    function handleFormSubmit(event) {
-        event.preventDefault(); 
-        
-        document.getElementById('contactFormSection').style.display = 'none';
-
-       
-        document.getElementById('thankYouMessage').style.display = 'block';
-    }
-
-    
-    function goBack() {
-       
-        document.getElementById('thankYouMessage').style.display = 'none';
-
-        
-        document.getElementById('contactFormSection').style.display = 'block';
-
-        
-        document.getElementById('contactForm').reset();
-    }
-</script>
+                <div class="contact-form" id="contactFormSection">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" action="https://formspree.io/f/xlddopgb" method="POST" onsubmit="handleFormSubmit(event)">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name..." required>
+                
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="_replyto" placeholder="Enter your email..." required>
+                
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                
+                <script>
+                    function handleFormSubmit(event) {
+                        event.preventDefault(); 
+                
+                        document.getElementById("contactForm").submit();
+                
+                       
+                        alert("Your message has been sent successfully!"); 
+                    }
+                </script>
+                
+                
 
 
     </section>
@@ -152,23 +123,6 @@
             menuIcon.classList.remove('active');
         });
         
-            </script>
-    <script>
-        
-        const loginButton = document.getElementById('loginButton');
-        const profileIcon = document.getElementById('profileIcon');
-    
-       
-        if (localStorage.getItem('loggedIn') === 'true') {
-            loginButton.style.display = 'none';
-            profileIcon.style.display = 'block';
-        }
-    
-        
-        profileIcon.addEventListener('click', function() {
-            localStorage.removeItem('loggedIn'); 
-            window.location.href = 'loginpage.html'; 
-        });
     </script>
     <footer>
         <div class="footer-menu">

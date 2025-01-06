@@ -28,17 +28,6 @@
                     <span></span>
                 </div>
             </nav>
-            <div id="loginContainer">
-                
-                <form action="loginpage.html" method="get" id="loginForm">
-                    <button type="submit" class="login-button" id="loginButton">Log In</button>
-                </form>
-    
-               
-                <div id="profileIcon" style="display: none;">
-                    <i class="fas fa-user-circle" style="font-size: 30px;"></i>
-                </div>
-            </div>
         </div> 
     </header>
       
@@ -110,24 +99,6 @@
         closeMenu.addEventListener('click', () => {
             navLinks.classList.remove('active');
             menuIcon.classList.remove('active');
-        });
-    </script>
-
-    <script>
-        
-        const loginButton = document.getElementById('loginButton');
-        const profileIcon = document.getElementById('profileIcon');
-
-        
-        if (localStorage.getItem('loggedIn') === 'true') {
-            loginButton.style.display = 'none';
-            profileIcon.style.display = 'block';
-        }
-
-       
-        profileIcon.addEventListener('click', function() {
-            localStorage.removeItem('loggedIn');
-            window.location.href = 'loginpage.html'; 
         });
     </script>
 

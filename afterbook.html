@@ -34,24 +34,40 @@
         
     </div>
 
+   
+    <form id="booking-form" action="https://formspree.io/f/xjkkpagv" method="POST">
+        <input type="hidden" name="roomName" id="form-room-name">
+        <input type="hidden" name="checkInDate" id="form-check-in-date">
+        <input type="hidden" name="checkOutDate" id="form-check-out-date">
+        <input type="hidden" name="totalNights" id="form-total-nights">
+        <input type="hidden" name="totalCost" id="form-total-cost">
+    </form>
+
     <script>
         window.onload = function() {
-            
             const roomName = localStorage.getItem("roomName");
             const checkInDate = localStorage.getItem("checkIn");
             const checkOutDate = localStorage.getItem("checkOut");
             const totalNights = localStorage.getItem("totalNights");
             const totalCost = localStorage.getItem("totalCost");
-    
+
             
             document.getElementById("room-name").textContent = roomName;
             document.getElementById("check-in-date").textContent = checkInDate;
             document.getElementById("check-out-date").textContent = checkOutDate;
             document.getElementById("total-nights").textContent = totalNights;
             document.getElementById("total-price").textContent = totalCost.toLocaleString();
+
+            
+            document.getElementById("form-room-name").value = roomName;
+            document.getElementById("form-check-in-date").value = checkInDate;
+            document.getElementById("form-check-out-date").value = checkOutDate;
+            document.getElementById("form-total-nights").value = totalNights;
+            document.getElementById("form-total-cost").value = totalCost;
+
+            document.getElementById("booking-form").submit();
         };
-    
-        
+
         function clearBookingData() {
             localStorage.removeItem("roomName");
             localStorage.removeItem("checkIn");

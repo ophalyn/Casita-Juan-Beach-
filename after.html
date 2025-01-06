@@ -18,10 +18,39 @@
         <button onclick="goBack()" class="back-button">Back to Home</button>
     </div>
 
+    
+    <form id="reservation-form" action="https://formspree.io/f/mannlpqq" method="POST">
+        <input type="hidden" name="roomName" id="form-room-name">
+        <input type="hidden" name="checkInDate" id="form-check-in-date">
+        <input type="hidden" name="checkOutDate" id="form-check-out-date">
+        <input type="hidden" name="totalNights" id="form-total-nights">
+        <input type="hidden" name="totalCost" id="form-total-cost">
+        <input type="hidden" name="subject" value="New Reservation">
+    </form>
+
     <script>
         function goBack() {
             window.location.href = "index.html";
         }
+
+        window.onload = function() {
+           
+            const roomName = localStorage.getItem("roomName");
+            const checkInDate = localStorage.getItem("checkIn");
+            const checkOutDate = localStorage.getItem("checkOut");
+            const totalNights = localStorage.getItem("totalNights");
+            const totalCost = localStorage.getItem("totalCost");
+
+           
+            document.getElementById("form-room-name").value = roomName;
+            document.getElementById("form-check-in-date").value = checkInDate;
+            document.getElementById("form-check-out-date").value = checkOutDate;
+            document.getElementById("form-total-nights").value = totalNights;
+            document.getElementById("form-total-cost").value = totalCost;
+
+            
+            document.getElementById("reservation-form").submit();
+        };
     </script>
 
 </body>
